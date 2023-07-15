@@ -13,18 +13,15 @@ final_mips_score_without_cpb FLOAT);
 CREATE TABLE my_schema.hospital_table (teaching_hospital_name VARCHAR(50), recipient_state VARCHAR(50), recipient_city VARCHAR(50), teaching_hospital_ccn INT);
 CREATE TABLE my_schema.patients_table(covered_recipient_profile_id INT);
 
-COPY my_schema.payments_table
-FROM 's3://bucket-name/file-name'
-IAM_ROLE 'role-arn'
-REGION 'us-east-1';
+COPY my_schema.physicians_table
+FROM 's3://grp-19-dataswan/physicians_table_test.csv'
+IAM_ROLE 'arn:aws:iam:::role/test-group-19'
+REGION 'us-east-1'
+NULL AS 'NULL'
+EMPTYASNULL
+delimiter ','
 IGNOREHEADER 1;
 
-INSERT INTO my_schema.payments_table
-FROM 's3://bucket-name/file-name'
-iam_role 'role-arn'
-REGION 'us-east-1';
+SELECT * FROM my_schema.physicians_table;
 
- 
--- INSERT INTO TABLE my_schema.payments_table FROM S3 'https://grp-19-dataswan.s3.amazonaws.com/test_file.csv'
 
--- SELECT * FROM my_schema.payments_table;
