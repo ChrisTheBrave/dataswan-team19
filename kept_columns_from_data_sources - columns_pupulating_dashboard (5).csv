@@ -1,0 +1,31 @@
+part_of_dashboard,field_on_example_dashboard,field_available_in_data,data_source,How,Group,Notes
+fig1 upper ,Date_of_Payment,Date_of_Payment,2020 General Payment Data,API,1,date of review also maybe needed
+fig1 upper,Product_Category_or_Theraputic_Area_1,product_category_or_therapeutic_area_1,2020 General Payment Data,API,2,
+fig1 upper,Recipient_Sate,Recipient_State,2020 General Payment Data,API,5,
+fig1 upper,Recipient_City,Recipient_City,2020 General Payment Data,API,5,
+fig1 lower,`Total Count of Payments` ,number_of_payments_included_in_total_amount,2020 General Payment Data,API,1,
+fig1 lower,`Average Payment Amount (USD)`,Total_Amount_of_Payment_USDollars,2020 General Payment Data,API,1,
+fig1 lower,Sum of Total_Amount_of_Payment_USDollars,Total_Amount_of_Payment_USDollars,2020 General Payment Data,API,1,
+fig2 upper,Date,Date_of_Payment,2020 General Payment Data,API,1,
+fig 2 upper,Specialty,Physician_Specialty,ownership payment 2020,API,2,(EDIT get from HEALTHGRADES)
+fig 2 upper,Hospital_Name,Teaching_Hospital_Name,2020 General Payment Data,API,5,
+fig 2 upper,Doctor_Name,physician_first_name,ownership payment 2020,API,2,
+fig 2 upper,Doctor_Name,physician_last_name,ownership payment 2020,API,2,
+fig 2 upper,Doctor_Name,physician_middle_name,ownership payment 2020,API,2,
+fig 2 lower ,Specialty,Physician_Specialty,ownership payment 2020,API,2,
+fig 2 lower ,Day,Date_of_Payment,2020 General Payment Data,API,1,This field will be derived from the date of payment field
+fig 2 lower ,Sum of Total_Amount_of_Payme...,Total_Amount_of_Payment_USDollars,2020 General Payment Data,API,1,
+,,Covered_Recipient_Profile_Primary_Specialty,Physician Profile Supplement,API,3,
+,, Quality_category_score,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,ec_score_file is from samuel post on May 18
+,, PI_category_score,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,
+,, IA_category_score,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,
+,,Cost_category_score,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,
+,, final_MIPS_score_without_CPB,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,
+,,facility_ccn,PY 2021 Clinician Public Reporting: Overall MIPS Performance,API,4,FOREIGN KEY
+,,teaching_hospital_ccn,2020 General Payment Data,API,5,PRIMARY KEY
+,,NPI,ec_score_file,,4,"PRIMARY KEY, May remove and switch back to org_nm to match with taching_hospital_name"
+,,record_id,,API,1,PRIMARY KEY 
+,,covered_recipient_profile_id,,API,2,FOREIGN KEY
+,,record_id,,API,2,PRIMARY EKY
+,,Covered_Recipient_Profile_ID,,API,3,PRIMARY KAY
+,,Covered_Recipient_NPI,2020 General Payment Data,API,2,FOREIGN KEY
